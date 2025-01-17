@@ -46,7 +46,7 @@ resource "aws_lambda_function" "nba_lambda" {
   handler       = "lambda_function.lambda_handler"
 
   # Path to your Lambda deployment package (ZIP file with the Python code)
-  filename = "../nba_game_lambda.zip"
+  filename = "../lambda_package/nba_game_lambda.zip"
 
   # Environment variables
   environment {
@@ -86,7 +86,7 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 resource "aws_cloudwatch_event_rule" "schedule_rule" {
   name        = "nba_game_update_schedule"
   description = "Schedule to trigger Lambda every 5 hours"
-  schedule_expression = "cron(0 */5 * * ? *)" # Runs every 5 hours
+  schedule_expression = "cron(0 */2 * * ? *)" # Runs every 5 hours
 }
 
 # EventBridge Target
