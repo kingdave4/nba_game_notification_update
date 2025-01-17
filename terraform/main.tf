@@ -86,7 +86,7 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 resource "aws_cloudwatch_event_rule" "schedule_rule" {
   name        = "nba_game_update_schedule"
   description = "Schedule to trigger Lambda every 5 hours"
-  schedule_expression = "cron(0 */2 * * ? *)" # Runs every 5 hours
+  schedule_expression = "cron(0 */5 * * ? *)" # Runs every 5 hours
 }
 
 # EventBridge Target
