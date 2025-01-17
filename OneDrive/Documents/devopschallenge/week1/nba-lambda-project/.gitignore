@@ -1,0 +1,14 @@
+# Terraform files
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# AWS credentials
+*.pem
+*.key
+.env
+
+# Logs and temporary files
+*.log
+*.zip
