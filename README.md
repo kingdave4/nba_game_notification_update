@@ -1,11 +1,11 @@
-### Welcome to my 2nd Project of the 30 Days Devops Challenge!. 
+# Welcome to my 2nd Project of the 30 Days Devops Challenge!. 
 
 I am excited to continue this journey of learning cloud technologies and tackling all the hands-on projects.
 I decided to add my own challenge into the project by deploying it with Terraform to add automation to the all process.
 I first did the project through AWS console but then i decided to make it a little bit more challenging more efficien.
 
 
-# NBA Game Updates Project
+## NBA Game Updates Project
 
 This project is designed to fetch NBA game updates and deliver them to subscribers via email using AWS services. It leverages AWS Lambda, SNS (Simple Notification Service), and EventBridge for automation and notifications. Terraform is used to define and deploy the infrastructure as code.
 
