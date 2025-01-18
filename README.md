@@ -123,7 +123,9 @@ Check your email inbox and confirm the subscription to the SNS topic.
    - Ensure your AWS credentials are configured correctly.
    - Run `terraform validate` to check for syntax issues.
 
+
 ## NBA Game Updates
-![image](https://github.com/user-attachments/assets/44513d5b-57fe-4fa6-8a34-7a23799f9ee9)
+
+![image](https://github.com/user-attachments/assets/eadb9504-f300-45c9-9f0d-81363d826ceb)
 
 
