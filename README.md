@@ -4,10 +4,13 @@ I am excited to continue this journey of learning cloud technologies and tacklin
 I decided to add my own challenge into the project by deploying it with Terraform to add automation to the all process.
 I first did the project through AWS console but then i decided to make it a little bit more challenging more efficien.
 
+![image](https://github.com/user-attachments/assets/6c1b54f7-ac15-4540-ad38-58b144c5bd7b)
+
 
 ## NBA Game Updates Project
 
 This project is designed to fetch NBA game updates and deliver them to subscribers via email using AWS services. It leverages AWS Lambda, SNS (Simple Notification Service), and EventBridge for automation and notifications. Terraform is used to define and deploy the infrastructure as code.
+
 
 
 ## **Features**
