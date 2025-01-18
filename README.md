@@ -2,7 +2,7 @@
 
 I am excited to continue this journey of learning cloud technologies and tackling all the hands-on projects.
 I decided to add my own challenge into the project by deploying it with Terraform to add automation to the entire process.
-I first did the project through AWS console but then i decided to make it a little bit more challenging more efficient.
+I first did the project through AWS console but then i decided to make it a little bit more challenging and more efficient.
 
 
 ## NBA Game Updates Project
