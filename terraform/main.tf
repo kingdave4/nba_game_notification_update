@@ -1,3 +1,6 @@
+# This file contains the main Terraform configuration for the NBA Game Updates project.
+
+# Creates an IAM role for the Lambda function
 resource "aws_iam_role" "lambda_role" {
   name = "nba_lambda_role"
   assume_role_policy = jsonencode({
@@ -12,7 +15,7 @@ resource "aws_iam_role" "lambda_role" {
   })
 }
 
-
+# Attach the AWS managed policy for Lambda execution
 resource "aws_iam_role_policy" "lambda_policy" {
   name   = "nba_lambda_policy"
   role   = aws_iam_role.lambda_role.id
@@ -34,11 +37,12 @@ resource "aws_iam_role_policy" "lambda_policy" {
 }
 
 
+# Create SNS Topic for NBA Game Updates
 resource "aws_sns_topic" "nba_topic" {
   name = "nba_game_updates"
 }
 
-
+# create Lambda function
 resource "aws_lambda_function" "nba_lambda" {
   function_name = "nba_game_data_handler"
   runtime       = "python3.9"
@@ -46,9 +50,9 @@ resource "aws_lambda_function" "nba_lambda" {
   handler       = "lambda_function.lambda_handler"
 
   # Path to your Lambda deployment package (ZIP file with the Python code)
-  filename = "../lambda_package/nba_game_lambda.zip"
+  filename = "../lambda/nba_game_lambda.zip"
 
-  # Environment variables
+  # set the environment variables
   environment {
     variables = {
       NBA_API_KEY    = var.nba_api_key
@@ -57,6 +61,7 @@ resource "aws_lambda_function" "nba_lambda" {
   }
 }
 
+# Lambda Permission for SNS
 resource "aws_lambda_permission" "allow_sns" {
   statement_id  = "AllowExecutionFromSNS"
   action        = "lambda:InvokeFunction"
@@ -66,6 +71,7 @@ resource "aws_lambda_permission" "allow_sns" {
 }
 
 
+# The ARN of the SNS topic to which game updates are published. Used in the Lambda function to send updates.
 resource "aws_sns_topic_subscription" "email_subscription" {
   topic_arn = aws_sns_topic.nba_topic.arn
   protocol  = "email"
@@ -82,14 +88,15 @@ resource "aws_lambda_permission" "allow_eventbridge" {
   source_arn    = aws_cloudwatch_event_rule.schedule_rule.arn
 }
 
-# EventBridge Rule
+# EventBridge Rule to trigger Lambda every 2 hours
 resource "aws_cloudwatch_event_rule" "schedule_rule" {
   name        = "nba_game_update_schedule"
-  description = "Schedule to trigger Lambda every 5 hours"
-  schedule_expression = "cron(0 */5 * * ? *)" # Runs every 5 hours
+  description = "Schedule to trigger Lambda every 2 hours"
+  # This cron expression triggers the Lambda function every 2 hours. Format: (minute, hour, day, month, weekday).
+  schedule_expression = "cron(0 */2 * * ? *)"
 }
 
-# EventBridge Target
+# EventBridge Target to trigger Lambda
 resource "aws_cloudwatch_event_target" "schedule_target" {
   rule      = aws_cloudwatch_event_rule.schedule_rule.name
   target_id = "nba_lambda"
