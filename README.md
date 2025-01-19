@@ -47,7 +47,7 @@ This project is designed to fetch NBA game updates and deliver them to subscribe
 ### **1. Clone the Repository**
 ```bash
 git clone https://github.com/kingdave4/nba_game_notification_update.git
-cd nba-game-updates
+cd nba_game_notification_update
 ```
 
 ### **2. Configure Environment Variables**
