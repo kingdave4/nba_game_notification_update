@@ -37,11 +37,6 @@ resource "aws_iam_role_policy" "lambda_policy" {
 }
 
 
-# Create SNS Topic for NBA Game Updates
-resource "aws_sns_topic" "nba_topic" {
-  name = "nba_game_updates"
-}
-
 # create Lambda function
 resource "aws_lambda_function" "nba_lambda" {
   function_name = "nba_game_data_handler"
@@ -61,13 +56,9 @@ resource "aws_lambda_function" "nba_lambda" {
   }
 }
 
-# Lambda Permission for SNS
-resource "aws_lambda_permission" "allow_sns" {
-  statement_id  = "AllowExecutionFromSNS"
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.nba_lambda.function_name
-  principal     = "sns.amazonaws.com"
-  source_arn    = aws_sns_topic.nba_topic.arn
+# Create SNS Topic for NBA Game Updates
+resource "aws_sns_topic" "nba_topic" {
+  name = "nba_game_updates"
 }
 
 
