@@ -16,6 +16,11 @@ This project is designed to fetch NBA game updates and deliver them to subscribe
 - Sends game updates to email subscribers.
 - Automates periodic execution using AWS EventBridge.
 
+
+## **Project diagram and file structure.
+
+![NBA-Game_Noti drawio](https://github.com/user-attachments/assets/2d067d38-8192-4dda-ae6f-4db8d5a4feeb)
+
 ---
 
 ## **Architecture Overview**
@@ -32,9 +37,6 @@ This project is designed to fetch NBA game updates and deliver them to subscribe
 
 4. **IAM Roles and Policies**:
    - Securely grant the Lambda function the necessary permissions to publish to SNS and log data to CloudWatch.
-
-
-![NBA-Game_Noti drawio](https://github.com/user-attachments/assets/2d067d38-8192-4dda-ae6f-4db8d5a4feeb)
 
 ---
 
