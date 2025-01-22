@@ -17,7 +17,7 @@ This project is designed to fetch NBA game updates and deliver them to subscribe
 - Automates periodic execution using AWS EventBridge.
 
 
-## **Project diagram and file structure.
+## **Project diagram.
 
 ![NBA-Game_Noti drawio](https://github.com/user-attachments/assets/2d067d38-8192-4dda-ae6f-4db8d5a4feeb)
 
