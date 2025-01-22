@@ -114,6 +114,11 @@ Check your email inbox and confirm the subscription to the SNS topic.
 - Integrate with a front-end dashboard to display game updates in real time.
 
 ---
+## **Challenges I Overcame**
+
+1️⃣ Lambda Timeout Issue: Fixed a connection timeout error by increasing the execution time from 5 to 10 seconds.
+2️⃣ SNS Recursive Loop: Resolved an infinite loop caused by incorrect permissions and configurations, ensuring a stable system.
+
 
 ## **Troubleshooting**
 1. **No Emails Received**:
