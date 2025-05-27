@@ -135,8 +135,3 @@ Check your email inbox and confirm the subscription to the SNS topic.
    - Run `terraform validate` to check for syntax issues.
 
 
-## NBA Game Updates received from SNS
-
-![image](https://github.com/user-attachments/assets/eadb9504-f300-45c9-9f0d-81363d826ceb)
-
-
